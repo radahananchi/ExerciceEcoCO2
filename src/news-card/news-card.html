@@ -12,21 +12,27 @@
         @apply --paper-font-common-base;
         padding: 24px;
       }
+
+      .image{
+        width:350px;
+        height: 350px;
+      }
     </style>
 
-    <h1>Hello from [[prop1]]!</h1>
+    
+    <div>
+      <img src="{{ img }}" class="image">
+      <h1> {{ title }} </h1>
+      <div class="label_date_publication"> {{ publishedAt }} </div>
+      <div class="label_author"> {{ author }} </div>
+     
+    </div>
 
   </template>
 
   <script>
-    /**
-     * `news-card`
-     * 
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
+ 
+
     class NewsCard extends Polymer.Element {
       static get is() { return 'news-card'; }
       static get properties() {
@@ -34,9 +40,52 @@
           prop1: {
             type: String,
             value: 'property 1'
+          }, 
+      
+         // titre de news-card    
+          title:{
+            type: String, 
+            default: ''
+          }, 
+          // auteur de news-card
+          author:{
+            type: String, 
+            default: ''
+          },
+          
+          //description de la news
+          description:{
+            type: String,
+            default: ''
+          },
+          // image de la news
+          img:{
+            type: String, 
+            default: ''
+          },
+          
+          // lien de la news
+          href:{
+            type: String, 
+            default: ''
+          },
+          
+          // date de publication de la news
+          publishedAt:{
+            type: Date,
+            default: ''
           }
         };
       }
+      
+      static get computed() {
+        return {          
+          
+          
+          
+        }
+      }
+      
     }
 
     window.customElements.define(NewsCard.is, NewsCard);

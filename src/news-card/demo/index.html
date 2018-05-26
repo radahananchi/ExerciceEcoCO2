@@ -9,24 +9,27 @@
     <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../news-card.html">
+    <link rel="import" href="./data.json">
+    
 
   </head>
   <body>
-
+      
     <style>
       #newsCard {
         max-width: 600px;
         margin: auto;
       }
     </style>
-
+    
     <news-card
-        id="newsCard"
-        title="A title"
-        description="A description"
-        img="https://placekitten.com/g/600/350"
-        href="#"
-        published-at="2017-08-16T01:08:31Z">
+       id="newsCard"
+       title="A title"
+       author="Author"
+       description="A description"
+       img="https://placekitten.com/g/600/350"
+       href="#"
+       published-at="2017-08-16T01:08:31Z">
     </news-card>
 
   </body>
