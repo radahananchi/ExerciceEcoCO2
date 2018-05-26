@@ -2,6 +2,9 @@
 <link rel="import" href="../../bower_components/shadycss/apply-shim.html">
 <link rel="import" href="../../bower_components/paper-styles/shadow.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+
+
 
 <dom-module id="news-card">
   <template>
@@ -17,21 +20,37 @@
         width:350px;
         height: 350px;
       }
+
+      .primary_text{
+        Font-size: 24px;
+        padding: 24px 16px 16px 16px;
+        color: #212121;
+      }
+
+      .sub_text{        
+        Font-size: 14px;
+        padding-Bottom: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        color: #757575;
+     
+      }
+
     </style>
 
     
     <div>
-      <img src="{{ img }}" class="image">
-      <h1> {{ title }} </h1>
-      <div class="label_date_publication"> {{ publishedAt }} </div>
-      <div class="label_author"> {{ author }} </div>
-     
+      <img src="{{ img }}" class="image" title="{{ description }}">
+      <div class="primary_text"> {{ title }} </div>
+      <div class="sub_text"> {{ publishedAt }} -  {{ author }} </div>
+    
     </div>
 
   </template>
 
   <script>
  
+  // import moment from "moment";
 
     class NewsCard extends Polymer.Element {
       static get is() { return 'news-card'; }
@@ -74,14 +93,31 @@
           publishedAt:{
             type: Date,
             default: ''
-          }
+          },
+
+          // format:{
+          //   type: String, 
+          //   default: "YYYY-DD-MM"
+          // }
         };
       }
       
+      static get data(){
+        return{
+          moment: moment,
+          currentTime: null
+        }
+      }
+
+      static get methods() {
+         return{
+            
+            
+        } 
+      }
+  
       static get computed() {
         return {          
-          
-          
           
         }
       }
