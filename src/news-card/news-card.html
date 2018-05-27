@@ -19,6 +19,7 @@
       .image{
         width:350px;
         height: 350px;
+        margin-top: 2%; 
       }
 
       .primary_text{
@@ -36,14 +37,27 @@
      
       }
 
+      a:link{
+        text-decoration: none;
+      }
+      
+      .news:hover{
+        box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.7); 
+      }
+
+      .containerImg{
+        text-align: center;
+      }
     </style>
 
     
-    <div>
-      <img src="{{ img }}" class="image" title="{{ description }}">
+    <div class="news">
+      <a  href= "{{ href }}" target="_blank">
+
+      <div class="containerImg"><img src="{{ img }}" class="image" title="{{ description }}"></div>
       <div class="primary_text"> {{ title }} </div>
       <div class="sub_text"> {{ publishedAt }} -  {{ author }} </div>
-    
+    </a>
     </div>
 
   </template>
@@ -104,20 +118,19 @@
       
       static get data(){
         return{
-          moment: moment,
-          currentTime: null
+     
         }
       }
 
       static get methods() {
          return{
-            
-            
+                       
         } 
       }
   
       static get computed() {
-        return {          
+        return {    
+                
           
         }
       }
