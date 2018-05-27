@@ -19,7 +19,7 @@
       .image{
         width:350px;
         height: 350px;
-        margin-top: 2%; 
+        margin-top: 2%;         
       }
 
       .primary_text{
@@ -46,17 +46,19 @@
       }
 
       .containerImg{
+        background-image: url(data:image/jpeg;base64,.....Base64img.....);
         text-align: center;
       }
     </style>
 
     
-    <div class="news">
+    <div class="news" >
       <a  href= "{{ href }}" target="_blank">
 
       <div class="containerImg"><img src="{{ img }}" class="image" title="{{ description }}"></div>
       <div class="primary_text"> {{ title }} </div>
       <div class="sub_text"> {{ publishedAt }} -  {{ author }} </div>
+      
     </a>
     </div>
 
@@ -64,8 +66,7 @@
 
   <script>
  
-  // import moment from "moment";
-
+ 
     class NewsCard extends Polymer.Element {
       static get is() { return 'news-card'; }
       static get properties() {
@@ -118,13 +119,13 @@
       
       static get data(){
         return{
-     
+    
         }
       }
 
       static get methods() {
          return{
-                       
+                        
         } 
       }
   
